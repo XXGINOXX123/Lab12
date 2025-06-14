@@ -1,32 +1,83 @@
-<?php
-// index.php - Página principal sin includes
-?>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" href="https://media.licdn.com/dms/image/v2/D4D0BAQEp_gs3xeEPKw/company-logo_200_200/company-logo_200_200/0/1693343820930?e=2147483647&v=beta&t=9ez-lz60VVw4lTDC_igy_2hUetMGtw3b4FB7BcDFKP0">
-  <title>ElectroPerú | Tecnología para tu hogar</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/estilos.css" />
-</head>
-<body>
+<?php include 'includes/header.php'; ?>
+<h1 class="text-center mb-4">Bienvenido a CYBERTEL</h1>
 
-  <main class="container my-5 text-center">
-    <h1>Bienvenido a ElectroPerú</h1>
-    <p class="lead">Tu tienda confiable de electrodomésticos</p>
+<p class="lead text-center">Somos una empresa líder en soluciones tecnológicas, especializada en la gestión de talento humano y el desarrollo de plataformas digitales.</p>
 
-    <div class="d-flex justify-content-center gap-3 mt-4 flex-wrap">
-      <a href="login.php" class="btn btn-primary btn-lg">Iniciar sesión</a>
-      <a href="contacto.php" class="btn btn-secondary btn-lg">Contacto</a>
-      <a href="nosotros.php" class="btn btn-info btn-lg text-white">Nosotros</a>
-      <a href="servicios.php" class="btn btn-success btn-lg">Servicios</a>
+<!-- Sección de Servicios -->
+<section class="mt-5">
+  <h3 class="mb-3">Nuestros Servicios</h3>
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">Desarrollo de Software</h5>
+          <p class="card-text">Creamos soluciones digitales a medida para empresas de todos los tamaños.</p>
+        </div>
+      </div>
     </div>
-  </main>
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">Transformación Digital</h5>
+          <p class="card-text">Asesoramos a empresas en su proceso de modernización tecnológica.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">Reclutamiento y Selección</h5>
+          <p class="card-text">Plataformas inteligentes para atraer y gestionar talento humano.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <div class="card-body">
+          <h5 class="card-title">Automatización Empresarial</h5>
+          <p class="card-text">Optimizamos procesos internos mediante herramientas digitales.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/scripts.js"></script>
-</body>
-</html>
+<!-- Sección de Testimonios -->
+<section class="mt-5">
+  <h3 class="mb-3">Testimonios</h3>
+  <div class="row">
+    <div class="col-md-6">
+      <blockquote class="blockquote">
+        <p>"Gracias a CYBERTEL, optimizamos nuestro proceso de selección en un 70%."</p>
+        <footer class="blockquote-footer">Recursos Humanos, TechCorp</footer>
+      </blockquote>
+    </div>
+    <div class="col-md-6">
+      <blockquote class="blockquote">
+        <p>"La plataforma de CVs es intuitiva y eficiente. ¡Muy recomendada!"</p>
+        <footer class="blockquote-footer">Gerente de Talento, Innovatech</footer>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- Sección de Noticias -->
+<section class="mt-5">
+  <h3 class="mb-3">Últimas Noticias</h3>
+  <div class="card shadow-sm">
+    <div class="card-body">
+      <h5 class="card-title">CYBERTEL lanza nueva plataforma de entrevistas virtuales</h5>
+      <p class="card-text">La nueva herramienta permite realizar entrevistas en línea con análisis de lenguaje corporal y voz.</p>
+      <a href="#" class="btn btn-outline-primary">Leer más</a>
+    </div>
+  </div>
+</section>
+
+<!-- Llamado a la acción -->
+<section class="mt-5 text-center">
+  <h4>¿Quieres formar parte de nuestro equipo?</h4>
+  <p>Explora nuestras oportunidades laborales y postula con tu CV.</p>
+  <a href="registro_cv.php" class="btn btn-success">Postula Aquí</a>
+</section>
+
+<?php include 'includes/footer.php'; ?>
