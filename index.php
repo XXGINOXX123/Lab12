@@ -6,6 +6,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="https://media.licdn.com/dms/image/v2/D4D0BAQEp_gs3xeEPKw/company-logo_200_200/company-logo_200_200/0/1693343820930?e=2147483647&v=beta&t=9ez-lz60VVw4lTDC_igy_2hUetMGtw3b4FB7BcDFKP0">
   <title>ElectroPerú | Tecnología para tu hogar</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
