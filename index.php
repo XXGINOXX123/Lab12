@@ -1,34 +1,25 @@
-<?php include 'components/header.php'; ?>
-<?php include 'components/navbar.php'; ?>
+<?php
+// index.php - Página principal sin includes
+?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ElectroPerú | Tecnología para tu hogar</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/estilos.css">
+</head>
+<body>
 
-<main>
-    <section class="hero">
-        <div class="container">
-            <h1>Bienvenido a CYBERTEL</h1>
-            <p>La plataforma líder en recepción de CVs para el sector tecnológico</p>
-            <a href="registro.php" class="btn btn-primary">Sube tu CV</a>
-        </div>
-    </section>
+  <main class="container my-5 text-center">
+    <h1>Bienvenido a ElectroPerú</h1>
+    <p class="lead">Tu tienda confiable de electrodomésticos</p>
+    <a href="login.php" class="btn btn-primary btn-lg mt-4">Iniciar sesión</a>
+  </main>
 
-    <section class="features">
-        <div class="container">
-            <div class="feature-box">
-                <img src="img/icons/upload.png" alt="Subir CV">
-                <h3>Sube tu CV fácilmente</h3>
-                <p>Formato simple y rápido para candidatos</p>
-            </div>
-            <div class="feature-box">
-                <img src="img/icons/search.png" alt="Buscar talento">
-                <h3>Encuentra el mejor talento</h3>
-                <p>Potente sistema de búsqueda para reclutadores</p>
-            </div>
-            <div class="feature-box">
-                <img src="img/icons/secure.png" alt="Seguro">
-                <h3>Plataforma segura</h3>
-                <p>Tus datos están protegidos con nosotros</p>
-            </div>
-        </div>
-    </section>
-</main>
-
-<?php include 'components/footer.php'; ?>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/scripts.js"></script>
+</body>
+</html>
