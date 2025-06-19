@@ -5,6 +5,8 @@
   <title>CYBERTEL</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet"> 
+  <link rel="icon" href="img/imagen1.jpeg" sizes="32x32" type="image/jpeg">
+  <link rel="icon" href="img/imagen1.jpeg" sizes="16x16" type="image/jpeg">
   <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
