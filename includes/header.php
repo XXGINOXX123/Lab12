@@ -21,7 +21,7 @@
           <li class="nav-item"><a class="nav-link" href="index.php">Inicio</a></li>
           <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
           <li class="nav-item"><a class="nav-link" href="nosotros.php">Nosotros</a></li>
-          <li class="nav-item"><a class="nav-link" href="contacto.php">Contacto</a></li>
+          <li class="nav-item"><a class="nav-link" href="contactos.php">Contacto</a></li>
           <li class="nav-item"><a class="nav-link" href="registro_cv.php">Registro CV</a></li>
           <li class="nav-item"><a class="nav-link" href="panel_rrhh.php">RRHH</a></li>
         </ul>
