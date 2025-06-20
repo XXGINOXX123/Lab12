@@ -38,10 +38,8 @@
 
 <script>
 // Datos simulados
-let postulantes = [
-  { nombre: "Ana Torres", correo: "ana@correo.com", area: "Marketing", archivo: "ana_cv.pdf" },
-  { nombre: "Luis Pérez", correo: "luis@correo.com", area: "Tecnología", archivo: "luis_cv.docx" }
-];
+let postulantes = JSON.parse(localStorage.getItem("postulantes")) || [];
+
 
 function renderTabla() {
   const cuerpo = document.getElementById("tablaPostulantes");
@@ -79,12 +77,41 @@ function editar(index) {
   const p = postulantes[index];
   const nuevoNombre = prompt("Editar nombre:", p.nombre);
   const nuevoCorreo = prompt("Editar correo:", p.correo);
-  const nuevaArea = prompt("Editar área:", p.area);
-  if (nuevoNombre && nuevoCorreo && nuevaArea) {
-    postulantes[index] = { ...p, nombre: nuevoNombre, correo: nuevoCorreo, area: nuevaArea };
-    renderTabla();
+  const nuevaArea = prompt("Editar área (Marketing, Tecnología, RRHH, Ventas):", p.area);
+
+  // Validación del correo
+  const correoValido = /^[^.\s@][^@]*@[^@]+\.[^@]+$/.test(nuevoCorreo);
+
+  // Validación del área de interés
+  const areasValidas = ["Marketing", "Tecnología", "RRHH", "Ventas"];
+  const areaValida = areasValidas.includes(nuevaArea);
+
+  if (!nuevoNombre || !nuevoCorreo || !nuevaArea) {
+    alert("Todos los campos son obligatorios.");
+    return;
   }
+
+  if (!correoValido) {
+    alert("Correo inválido. Debe contener '@' y no debe tener puntos antes del @.");
+    return;
+  }
+
+  if (!areaValida) {
+    alert("Área inválida. Solo se permite: Marketing, Tecnología, RRHH, Ventas.");
+    return;
+  }
+
+  postulantes[index] = {
+    ...p,
+    nombre: nuevoNombre,
+    correo: nuevoCorreo,
+    area: nuevaArea
+  };
+
+  localStorage.setItem("postulantes", JSON.stringify(postulantes));
+  renderTabla();
 }
+
 
 function eliminar(index) {
   if (confirm("¿Deseas eliminar esta postulación?")) {
