@@ -33,31 +33,70 @@
 <div id="mensaje" class="mt-3"></div>
 
 <script>
-let postulantes = JSON.parse(localStorage.getItem("postulantes")) || [];
+  let postulantes = JSON.parse(localStorage.getItem("postulantes")) || [];
 
-document.getElementById("formCV").addEventListener("submit", function(e) {
-  e.preventDefault();
-  const nombre = document.getElementById("nombre").value.trim();
-  const correo = document.getElementById("correo").value.trim();
-  const area = document.getElementById("area").value;
-  const archivo = document.getElementById("cv").files[0];
-  const mensaje = document.getElementById("mensaje");
+  document.getElementById("formCV").addEventListener("submit", function(e) {
+    e.preventDefault();
 
-  if (!archivo || !['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'].includes(archivo.type)) {
-    mensaje.innerHTML = '<div class="alert alert-danger">Formato de archivo no permitido.</div>';
-    return;
-  }
+    const nombre = document.getElementById("nombre").value.trim();
+    const correo = document.getElementById("correo").value.trim();
+    const area = document.getElementById("area").value;
+    const archivo = document.getElementById("cv").files[0];
+    const mensaje = document.getElementById("mensaje");
 
-  if (archivo.size > 10 * 1024 * 1024) {
-    mensaje.innerHTML = '<div class="alert alert-danger">El archivo supera los 10MB.</div>';
-    return;
-  }
+    // Validaciones de campo vacío
+    if (!nombre || !correo || !area || !archivo) {
+      mensaje.innerHTML = '<div class="alert alert-danger">Todos los campos son obligatorios.</div>';
+      return;
+    }
+    const nombreValido = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/.test(nombre);
+    if (!nombreValido) {
+      mensaje.innerHTML = '<div class="alert alert-danger">Nombre inválido. No se permiten números, puntos ni comas.</div>';
+      return;
+    }
+    // Validación de área
+    const areasValidas = ["Marketing", "Tecnología", "RRHH", "Ventas"];
+    if (!areasValidas.includes(area)) {
+      mensaje.innerHTML = '<div class="alert alert-danger">Área inválida. Selecciona una opción válida.</div>';
+      return;
+    }
 
-  postulantes.push({ nombre, correo, area, archivo: archivo.name });
-  localStorage.setItem("postulantes", JSON.stringify(postulantes));
-  mensaje.innerHTML = '<div class="alert alert-success">¡CV enviado correctamente!</div>';
-  document.getElementById("formCV").reset();
-});
+    // Validación de correo
+    const correoValido = /^[^.\s@][^@]*@[^@]+\.[^@]+$/.test(correo);
+    if (!correoValido) {
+      mensaje.innerHTML = '<div class="alert alert-danger">Correo inválido. Debe contener "@"';
+      return;
+    }
+
+    // Validación de archivo
+    const tiposPermitidos = [
+      'application/pdf',
+      'application/msword',
+      'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+    ];
+
+    if (!tiposPermitidos.includes(archivo.type)) {
+      mensaje.innerHTML = '<div class="alert alert-danger">Formato de archivo no permitido. Solo PDF o Word.</div>';
+      return;
+    }
+
+    if (archivo.size > 10 * 1024 * 1024) {
+      mensaje.innerHTML = '<div class="alert alert-danger">El archivo supera los 10MB.</div>';
+      return;
+    }
+
+    // Guardar en localStorage
+    postulantes.push({
+      nombre,
+      correo,
+      area,
+      archivo: archivo.name
+    });
+    localStorage.setItem("postulantes", JSON.stringify(postulantes));
+
+    mensaje.innerHTML = '<div class="alert alert-success">¡CV enviado correctamente!</div>';
+    document.getElementById("formCV").reset();
+  });
 </script>
 
 <?php include 'includes/footer.php'; ?>
