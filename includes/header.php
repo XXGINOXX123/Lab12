@@ -1,5 +1,4 @@
-<!-- header.php -->
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -11,28 +10,29 @@
   <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg bg-white border-bottom mb-4">
+  <nav class="navbar navbar-expand-lg mb-4">
     <div class="container-fluid">
       <a class="navbar-brand text-dark" href="index.php">
-        <img src="img/imagen1.jpeg" width="50px" alt="Logo CYBERTEL">
+        <img src="img/imagen1.jpeg" width="80px" height="80px" alt="Logo CYBERTEL">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link text-dark" href="index.php">Inicio</a></li>        
-          <li class="nav-item"><a class="nav-link text-dark" href="login.php">Login</a></li>
-          <li class="nav-item"><a class="nav-link text-dark" href="nosotros.php">Nosotros</a></li>
-          <li class="nav-item"><a class="nav-link text-dark" href="registro_cv.php">Registro CV</a></li>
-          <li class="nav-item"><a class="nav-link text-dark" href="panel_rrhh.php">RRHH</a></li>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav ">
+          <li class="nav-item"><a class="nav-link text-dark fs-5" href="index.php">Inicio</a></li>        
+          <li class="nav-item"><a class="nav-link text-dark fs-5" href="login.php">Login</a></li>
+          <li class="nav-item"><a class="nav-link text-dark fs-5" href="nosotros.php">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link text-dark fs-5" href="registro_cv.php">Registro CV</a></li>
+          <li class="nav-item"><a class="nav-link text-dark fs-5" href="panel_rrhh.php">RRHH</a></li>
           <li class="nav-item">
-            <a class="btn btn-primary ms-3" href="contactos.php">Contáctanos</a>
+            <a class="btn btn-primary  btn-lg ms-5" href="contactos.php">Contáctanos</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <div class="container">
+  <div class="wrapper d-flex flex-column min-vh-100">
+  <div class="container flex-grow-1">
