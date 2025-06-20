@@ -7,6 +7,7 @@
     border-radius: 15px;
     background: rgba(255,255,255,0.1);
     backdrop-filter: blur(10px);
+    animation: fadeInUp 0.3s ease-out;
     padding: 20px;
     border: 2px solid rgba(255, 255, 255, 0.2);
 }
@@ -33,11 +34,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(
-    45deg,
-    #667eea,
-    rgba(91, 36, 145, 0.8)
-  );
+  background: linear-gradient(135deg, #667eea, #764ba2);
   z-index: 1;
 }
 
@@ -195,7 +192,7 @@
 
 .cta-section h4 {
   font-size: 2rem;
-  margin-bottom: 20px;
+  margin-bottom: px;
   font-weight: 600;
 }
 
