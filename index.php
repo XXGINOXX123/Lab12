@@ -3,8 +3,8 @@
 </head>
 
 <body>
-  <!-- Sección Hero -->
-  <section class="hero-section">
+  
+  <section class="hero-section ">
     <div class="hero-content">
       <div class="container">
         <img src="img/imagen1.jpeg" alt="Logo Cybertel" class="hero-logo mb-4">
