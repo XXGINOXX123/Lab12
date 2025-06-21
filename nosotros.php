@@ -1,9 +1,13 @@
-<?php include 'includes/header.php'; ?>
-<h1 class="mb-4 text-center">Sobre Nosotros</h1>
-
+<?php include 'includes/header.php'; ?> 
+<link href="css/nosotros.css" rel="stylesheet">
+<section>
+<div class="container">
+<div class="main-content">
+<h1 class="section-title mb-4 text-center">Sobre Nosotros</h1>
 <div class="row mb-4">
   <div class="col-md-6">
-    <div class="card shadow-sm h-100">
+    <div class="service-card card shadow-sm h-100">
+      <i class="bi bi-people-fill service-icon"></i>
       <div class="card-body">
         <h5 class="card-title">¿Quiénes somos?</h5>
         <p class="card-text">
@@ -13,7 +17,9 @@
     </div>
   </div>
   <div class="col-md-6">
-    <div class="card shadow-sm h-100">
+    <div class="service-card card shadow-sm h-100">
+      <i class="bi bi-map service-icon"></i>
+      
       <div class="card-body">
         <h5 class="card-title">¿Qué hacemos?</h5>
         <p class="card-text">
@@ -26,7 +32,9 @@
 
 <div class="row mb-4">
   <div class="col-md-6">
-    <div class="card shadow-sm h-100">
+    <div class="service-card card shadow-sm h-100">
+      <i class="bi bi-geo-alt-fill service-icon"></i>
+      
       <div class="card-body">
         <h5 class="card-title">Presencia Nacional</h5>
         <p class="card-text">
@@ -36,8 +44,9 @@
     </div>
   </div>
   <div class="col-md-6">
-    <div class="card shadow-sm h-100">
-      <div class="card-body">
+    <div class="service-card card shadow-sm h-100">
+      <i class="bi bi-heart-fill service-icon"></i>
+      <div class="card-bodyt  ">
         <h5 class="card-title">Nuestros Principios</h5>
         <ul>
           <li><strong>Transparencia:</strong> Comunicación clara y honesta.</li>
@@ -50,7 +59,8 @@
   </div>
 </div>
 
-<div class="card shadow-sm mb-4">
+<div class="service-card card shadow-sm mb-4">
+  <i class="bi bi-rocket-takeoff-fill service-icon"></i>
   <div class="card-body">
     <h5 class="card-title">Mirando al Futuro</h5>
     <p class="card-text">
@@ -58,5 +68,7 @@
     </p>
   </div>
 </div>
-
+</section>
+</div>
+</div>
 <?php include 'includes/footer.php'; ?>
