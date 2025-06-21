@@ -1,0 +1,144 @@
+body {
+  background: #508bfc !important;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.footer-bg {
+  background: linear-gradient(135deg, #667eea, #764ba2) !important;
+  border-top: 4px solid #000 !important;
+  padding: 15px 0 !important;
+  text-align: center !important;
+  margin-top: 10px !important;
+}
+/* Navbar principal */
+.navbar {
+  background: linear-gradient(135deg, #667eea, #764ba2) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+  
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  animation: slideInDown 0.5s ease-out;
+  z-index: 100;
+}
+
+/* Brand/Logo */
+.navbar-brand {
+  font-size: 1.8rem !important;
+  font-weight: 800 !important;
+  color: white !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.navbar-brand::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+    
+  width: 100%;
+  height: 100%;
+  background: rgba(192, 186, 215, 0.1);
+  border-radius: 8px;
+  transform: scale(0);
+  transition: transform 0.3s ease;
+  z-index: -1;
+}
+
+.navbar-brand:hover {
+  color: black !important;
+  transform: translateY(-2px);
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-brand:hover::before {
+  transform: scale(1);
+}
+
+/* Contenedor del navbar */
+.container-fluid {
+  position: relative;
+  z-index: 2;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Links de navegación */
+.navbar-nav .nav-link {
+  color: black !important;
+  font-weight: 500 !important;
+  font-size: 1rem;
+  padding: 0.75rem 1.25rem !important;
+  margin: 0 0.2rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+ 
+}
+
+.navbar-nav .nav-link:hover {
+  color: white !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Botón hamburguesa para móviles */
+.navbar-toggler {
+  border: 2px solid rgba(255, 255, 255, 0.3) !important;
+  border-radius: 8px !important;
+  padding: 0.5rem 0.75rem !important;
+  transition: all 0.3s ease;
+}
+
+.navbar-toggler:hover {
+  border-color: white !important;
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+}
+
+/* Responsive - Menú colapsado */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    margin-top: 1rem;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .navbar-nav .nav-link {
+    margin: 0.2rem 0;
+    padding: 0.75rem 1rem !important;
+    border-radius: 8px;
+  }
+}
+
+/* Efectos de color individuales para cada link */
+.navbar-nav .nav-item:nth-child(1) .nav-link:hover { background: rgba(255, 107, 107, 0.2); }
+.navbar-nav .nav-item:nth-child(2) .nav-link:hover { background: rgba(78, 205, 196, 0.2); }
+.navbar-nav .nav-item:nth-child(3) .nav-link:hover { background: rgba(255, 165, 2, 0.2); }
+.navbar-nav .nav-item:nth-child(4) .nav-link:hover { background: rgba(156, 136, 255, 0.2); }
+.navbar-nav .nav-item:nth-child(5) .nav-link:hover { background: rgba(255, 121, 198, 0.2); }
+.navbar-nav .nav-item:nth-child(6) .nav-link:hover { background: rgba(6, 82, 221, 0.2); }
+
+/* Animación de entrada */
+@keyframes slideInDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
