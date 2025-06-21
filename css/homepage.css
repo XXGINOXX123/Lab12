@@ -116,7 +116,8 @@
   color: #667eea;
   margin-bottom: 20px;
   transition: all 0.3s ease;
-  padding-left: 230px;
+  display:block;
+  text-align: center;
 }
 
 .service-card:hover .service-icon {

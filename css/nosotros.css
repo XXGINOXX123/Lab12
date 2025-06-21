@@ -64,7 +64,8 @@
   color: #667eea;
   margin-bottom: 20px;
   transition: all 0.3s ease;
-  padding-left: 210px;
+  display: block;
+  text-align: center;
 }
 .service-card:hover .service-icon {
   color: #764ba2;
