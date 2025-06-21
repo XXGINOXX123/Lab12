@@ -22,6 +22,8 @@
       <tr>
         <th>Nombre</th>
         <th>Correo</th>
+        <th>Teléfono</th>
+        <th>Fecha de Nacimiento</th>
         <th>Área</th>
         <th>Archivo</th>
         <th>Acciones</th>
@@ -58,6 +60,8 @@ function renderTabla() {
       <tr>
         <td>${p.nombre}</td>
         <td>${p.correo}</td>
+        <td>${p.telefono}</td>
+        <td>${new Date(p.fechaNacimiento).toLocaleDateString()}</td>
         <td>${p.area}</td>
         <td><a href="#">${p.archivo}</a></td>
         <td>
@@ -77,6 +81,8 @@ function editar(index) {
   const p = postulantes[index];
   const nuevoNombre = prompt("Editar nombre:", p.nombre);
   const nuevoCorreo = prompt("Editar correo:", p.correo);
+  const nuevoTelefono = prompt("Editar teléfono:", p.telefono);
+  const nuevaFechaNacimiento = prompt("Editar fecha de nacimiento (YYYY-MM-DD):", new Date(p.fechaNacimiento).toISOString().split('T')[0]);
   const nuevaArea = prompt("Editar área (Marketing, Tecnología, RRHH, Ventas):", p.area);
 
   // Validación del correo
@@ -86,7 +92,7 @@ function editar(index) {
   const areasValidas = ["Marketing", "Tecnología", "RRHH", "Ventas"];
   const areaValida = areasValidas.includes(nuevaArea);
 
-  if (!nuevoNombre || !nuevoCorreo || !nuevaArea) {
+  if (!nuevoNombre || !nuevoCorreo ||!nuevoTelefono || !nuevaFechaNacimiento|| !nuevaArea) {
     alert("Todos los campos son obligatorios.");
     return;
   }
@@ -105,6 +111,8 @@ function editar(index) {
     ...p,
     nombre: nuevoNombre,
     correo: nuevoCorreo,
+    telefono: nuevoTelefono,
+    fechaNacimiento: nuevaFechaNacimiento,
     area: nuevaArea
   };
 
@@ -116,6 +124,7 @@ function editar(index) {
 function eliminar(index) {
   if (confirm("¿Deseas eliminar esta postulación?")) {
     postulantes.splice(index, 1);
+    localStorage.setItem("postulantes", JSON.stringify(postulantes));
     renderTabla();
   }
 }
