@@ -26,8 +26,8 @@
               <i class="bi bi-code-slash service-icon"></i>
               <div class="card-body text-center">
 
-                <h5 class="card-title">Desarrollo de Software</h5>
-                <p class="card-text">Creamos soluciones digitales a medida para empresas de todos los tamaños.</p>
+                <h5 class="card-title mb-2">Desarrollo de Software</h5>
+                <p class="card-text text-muted">Creamos soluciones digitales a medida para empresas de todos los tamaños.</p>
               </div>
             </div>
           </div>
