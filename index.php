@@ -3,11 +3,11 @@
 </head>
 
 <body>
-  
+
   <section class="hero-section ">
     <div class="hero-content">
       <div class="container">
-        <img src="img/imagen1.jpeg" alt="Logo Cybertel" class="hero-logo mb-4">
+        <img src="img/imagen1.jpeg" alt="Logo Cybertel" class="hero-logo mb-5">
         <h1>Bienvenido a CYBERTEL</h1>
         <p class="lead">Somos una empresa líder en soluciones tecnológicas, especializada en la gestión de talento humano y el desarrollo de plataformas digitales.</p>
       </div>
@@ -22,39 +22,43 @@
         <h3 class="section-title">Nuestros Servicios</h3>
         <div class="row row-cols-1 row-cols-md-2 g-4">
           <div class="col">
-            <div class="service-card">
-              <div class="text-center">
-                <i class="bi bi-code-slash service-icon"></i>
+            <div class="service-card card shadow-sm h-100">
+              <i class="bi bi-code-slash service-icon"></i>
+              <div class="card-body text-center">
+
+                <h5 class="card-title">Desarrollo de Software</h5>
+                <p class="card-text">Creamos soluciones digitales a medida para empresas de todos los tamaños.</p>
               </div>
-              <h5 class="card-title text-center">Desarrollo de Software</h5>
-              <p class="card-text text-center">Creamos soluciones digitales a medida para empresas de todos los tamaños.</p>
             </div>
           </div>
           <div class="col">
-            <div class="service-card">
-              <div class="text-center">
-                <i class="bi bi-arrows-angle-expand service-icon"></i>
+            <div class="service-card card shadow-sm h-100">
+              <i class="bi bi-arrows-angle-expand service-icon"></i>
+              <div class="card-body text-center">
+
+                <h5 class="card-title">Transformación Digital</h5>
+                <p class="card-text">Asesoramos a empresas en su proceso de modernización tecnológica.</p>
               </div>
-              <h5 class="card-title text-center">Transformación Digital</h5>
-              <p class="card-text text-center">Asesoramos a empresas en su proceso de modernización tecnológica.</p>
             </div>
           </div>
           <div class="col">
-            <div class="service-card">
-              <div class="text-center">
-                <i class="bi bi-people service-icon"></i>
+            <div class="service-card card shadow-sm h-100">
+
+              <i class="bi bi-people service-icon"></i>
+              <div class="card-body text-center">
+                <h5 class="card-title">Reclutamiento y Selección</h5>
+                <p class="card-text">Plataformas inteligentes para atraer y gestionar talento humano.</p>
               </div>
-              <h5 class="card-title text-center">Reclutamiento y Selección</h5>
-              <p class="card-text text-center">Plataformas inteligentes para atraer y gestionar talento humano.</p>
             </div>
           </div>
           <div class="col">
-            <div class="service-card">
-              <div class="text-center">
-                <i class="bi bi-gear service-icon"></i>
+            <div class="service-card card shadow-sm h-100">
+
+              <i class="bi bi-gear service-icon"></i>
+              <div class="card-body text-center">
+                <h5 class="card-title">Automatización Empresarial</h5>
+                <p class="card-text">Optimizamos procesos internos mediante herramientas digitales.</p>
               </div>
-              <h5 class="card-title text-center">Automatización Empresarial</h5>
-              <p class="card-text text-center">Optimizamos procesos internos mediante herramientas digitales.</p>
             </div>
           </div>
         </div>
@@ -121,6 +125,6 @@
     </section>
   </div>
 
-  
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
   <?php include 'includes/footer.php'; ?>
