@@ -11,7 +11,15 @@
     <label for="correo" class="form-label">Correo electrónico</label>
     <input type="email" class="form-control" id="correo" required>
   </div>
-  <div class="col-md-6">
+  <div class="col-md-4">
+    <label for="telefono" class="form-label">Teléfono</label>
+    <input type="tel" class="form-control" id="telefono" placeholder="Ej: 987654321" required>
+  </div>
+  <div class="col-md-4">
+    <label for="fecha_nacimiento" class="form-label">Fecha de Nacimiento</label>
+    <input type="date" class="form-control" id="fecha_nacimiento" required>
+  </div>
+  <div class="col-md-4">
     <label for="area" class="form-label">Área de interés</label>
     <select class="form-select" id="area" required>
       <option value="">Selecciona una opción</option>
@@ -40,20 +48,25 @@
 
     const nombre = document.getElementById("nombre").value.trim();
     const correo = document.getElementById("correo").value.trim();
+    const telefono = document.getElementById("telefono").value.trim();
+    const fechaNacimiento = document.getElementById("fecha_nacimiento").value;
     const area = document.getElementById("area").value;
     const archivo = document.getElementById("cv").files[0];
     const mensaje = document.getElementById("mensaje");
 
     // Validaciones de campo vacío
-    if (!nombre || !correo || !area || !archivo) {
+    if (!nombre || !correo || !telefono || !fechaNacimiento || !area || !archivo) {
       mensaje.innerHTML = '<div class="alert alert-danger">Todos los campos son obligatorios.</div>';
       return;
     }
+
+    // Validación de nombre
     const nombreValido = /^[A-Za-zÁÉÍÓÚáéíóúÑñ\s]+$/.test(nombre);
     if (!nombreValido) {
       mensaje.innerHTML = '<div class="alert alert-danger">Nombre inválido. No se permiten números, puntos ni comas.</div>';
       return;
     }
+
     // Validación de área
     const areasValidas = ["Marketing", "Tecnología", "RRHH", "Ventas"];
     if (!areasValidas.includes(area)) {
@@ -64,7 +77,24 @@
     // Validación de correo
     const correoValido = /^[^.\s@][^@]*@[^@]+\.[^@]+$/.test(correo);
     if (!correoValido) {
-      mensaje.innerHTML = '<div class="alert alert-danger">Correo inválido. Debe contener "@"';
+      mensaje.innerHTML = '<div class="alert alert-danger">Correo inválido. Debe contener "@" y un dominio válido.</div>';
+      return;
+    }
+
+    // Validación de teléfono (9 dígitos para Perú)
+    const telefonoValido = /^[0-9]{9}$/.test(telefono);
+    if (!telefonoValido) {
+      mensaje.innerHTML = '<div class="alert alert-danger">Teléfono inválido. Debe tener 9 dígitos.</div>';
+      return;
+    }
+
+    // Validación de fecha de nacimiento (mínimo 18 años)
+    const fechaNac = new Date(fechaNacimiento);
+    const hoy = new Date();
+    const edadMinima = new Date(hoy.getFullYear() - 18, hoy.getMonth(), hoy.getDate());
+    
+    if (fechaNac > edadMinima) {
+      mensaje.innerHTML = '<div class="alert alert-danger">Debes ser mayor de 18 años para postular.</div>';
       return;
     }
 
@@ -89,6 +119,8 @@
     postulantes.push({
       nombre,
       correo,
+      telefono,
+      fechaNacimiento,
       area,
       archivo: archivo.name
     });
